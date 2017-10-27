@@ -1,0 +1,110 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>Beginner's Guide to Refactoring Code</title>
+    
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="presentation.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+	<!--
+		Notes:
+        * `data-x`, `data-y`, `data-z` -- they define the position of **the center** of step element on
+            the canvas in pixels; their default value is 0;
+        * `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` -- they define the rotation of
+            the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
+            are exactly the same;
+        * `data-scale` -- defines the scale of step element; default value is 1
+
+		  if you want something to be in front or behind another slide, use data-z
+		  you can also data-rotate x, y, and z axis for nifty 3-d effects
+		  data-scale causes the slide and its text to be much larger
+		  animation within a slide is done via css animation, with the element
+		    moving from a "future" class to a "present" class.  for example:
+			"#ing.present .positioning" css on element <b class="positioning">positioning</b>
+		-->
+
+    <div class="step slide" data-x="0000" data-y="0000" data-z="0" data-rotate="0">
+		<h1>Beginner's Guide to Refactoring Code</h1>
+		<p>
+			<span class="title">Author</span>
+			Dan Juliano (<a href="http://www.linkedin.com/pub/dan-juliano/1/865/2a3">Linked In</a>)
+		</p>
+		<p>
+			<span class="title">Code Samples</span>
+			<a href="https://github.com/tbd">To Be Determined</a> on Github
+		</p>
+		<p>
+			<span class="title">Place of Employment</span>
+			<a href="http://www.telligen.com/">Telligen</a>
+			<q>Delivering results
+			for health plan sponsors and federal and state health programs.</q>
+		</p>
+	</div>
+
+    <div class="step slide" data-x="0000" data-y="1000" data-z="0" data-rotate="0">
+		<h1>What is Maintainable Code?</h1>
+		<img class="image2" src="images/Spaghetti.jpg" alt="Spaghetti" />
+    </div>
+
+    <div class="step slide" data-x="0000" data-y="2000" data-z="0" data-rotate="0">
+		<h1>AST Safe Refactoring</h1>
+		<img class="image2" src="images/Eclipse-AST-1.png" alt="Eclipse-AST-1" />
+    </div>
+
+    <div class="step slide" data-x="0000" data-y="3000" data-z="0" data-rotate="0">
+		<h1>Learning Your IDE</h1>
+		<ul>
+			<li>Reformat Code</li>
+			<li>Extract method</li>
+			<li>Extract variable</li>
+			<li>Rename</li>
+			<li>Inline</li>
+		</ul>
+    </div>
+
+    <div class="step slide" data-x="0000" data-y="4000" data-z="0" data-rotate="0">
+		<h1>The First Test</h1>
+		<img class="image1" src="images/Testing.jpg" alt="Testing" />
+    </div>
+
+    <div class="step slide" data-x="0000" data-y="5000" data-z="0" data-rotate="0">
+		<h1>Considerations</h1>
+		<ul>
+			<li>Which parts were safe?</li>
+			<li>Which parts were unprotected?</li>
+		</ul>
+    </div>
+	
+    <div id="overview" class="step" data-x="0000" data-y="2500" data-scale="8">
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
