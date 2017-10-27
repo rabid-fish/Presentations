@@ -3,112 +3,186 @@
 <head>
 <meta charset="utf-8">
 <title>High Performance Web Sites</title>
-<style>
-body {
-  background-image: url(//wmh.github.io/circular-slides-generator/static/img/noise.png);
-}
-.step {
-    position: relative;
-    padding: 40px;
-    margin: 0 auto;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing:    border-box;
-    -ms-box-sizing:     border-box;
-    -o-box-sizing:      border-box;
-    box-sizing:         border-box;
-    font-family: 'PT Serif', georgia, serif;
-    font-size: 48px;
-    line-height: 1.5;
-}
-.slide {
-  display: block;
-  width: 800px;
-  height: 600px;
-  padding: 120px 60px;
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, .3);
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
-  color: rgb(102, 102, 102);
-  text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
-  font-family: 'Open Sans', Arial, sans-serif;
-}
-.credits, .credits h2 {
-  padding-top: 0;
-}
+<style type="text/css">
+
+	body {
+	  background-image: url(//wmh.github.io/circular-slides-generator/static/img/noise.png);
+	  /* https://www.telligen.com/wp-content/themes/core-theme/assets/img/page_link.png */
+	}
+	
+	.step {
+		position: relative;
+		padding: 40px;
+		margin: 0 auto;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing:    border-box;
+		-ms-box-sizing:     border-box;
+		-o-box-sizing:      border-box;
+		box-sizing:         border-box;
+		font-family: 'PT Serif', georgia, serif;
+		font-size: 30px;
+		line-height: 1.5;
+	}
+	
+	.slide {
+	  display: block;
+	  width: 800px;
+	  height: 600px;
+	  padding: 20px 40px;
+	  background-color: white;
+	  border: 1px solid rgba(0, 0, 0, .3);
+	  border-radius: 10px;
+	  box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+	  color: rgb(102, 102, 102);
+	  text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+	  font-family: 'Open Sans', Arial, sans-serif;
+	}
+	
+	.credits, .credits h2 {
+	  padding-top: 0;
+	}
+	
+	/* Dan's stuff starts here */
+	
+	.slide h1 {
+		color: #002EB8;
+		text-shadow: 2px 2px 2px #99B3FF;
+		font-size: 117%;
+		margin-bottom: 20px;
+	}
+
+	.slide span {
+		display: block;
+		font-weight: bold;
+		margin-left: -10px;
+		margin-top: 30px;
+	}
+
+	.slide p {
+		margin-left: 20px;
+	}
+
+	.slide p q {
+		display: block;
+		margin: 10px;
+	}
+
+	.slide img.imageWide {
+		height: 400px;
+		display: block;
+		margin: auto;
+	}
+
+	.slide img.imageTall {
+		width: 600px;
+		display: block;
+		margin: auto;
+		margin-top: 100px;
+	}
+
+	.slide ul {
+		list-style-type: circle;
+		margin-left: 60px;
+		margin-top: 100px;
+	}
+
+	.slide li {
+		font-size: 200%;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		text-shadow: none;
+		line-height: 110%;
+	}
+	
+	.single-point {
+		padding: 30px 0px;
+		font-size: 80px;
+	}
+
+	
 </style>
 </head>
 <body>
 <div id="impress">
-<div class="step slide" data-x="-400" data-y="-300" data-rotate="0" data-scale="1.1156249999999999">
-  <q>High Performance Web Sites</q>
-</div>
 
-<div class="step slide" data-x="875" data-y="-299" data-rotate="0" data-scale="1">
-  <a target="_blank" href="http:\\www.cnn.com">CNN</a>
-</div>
+	<div class="step slide" data-x="0000" data-y="0000" data-rotate="0" data-scale="1">
+		<h1>High Performance Web Sites</h1>
+		<p>
+			<span class="title">Authors</span>
+			Ben Kallaus (<a href="https://www.linkedin.com/in/benjamin-kallaus-b242b781">LinkedIn</a>)<br>
+			Dan Juliano (<a href="https://www.linkedin.com/in/dan-juliano-2a38651">LinkedIn</a>)
+		</p>
+		<p>
+			<span class="title">Place of Employment</span>
+			<a href="http://www.telligen.com/">Telligen</a>
+			<q>
+				Improving health outcomes for millions of people nationwide through proven health management solutions and healthcare expertise.
+			</q>
+		</p>
+	</div>
 
-<div class="step slide" data-x="631" data-y="449" data-rotate="36" data-scale="1">
-  <q>Make Fewer Requests</q>
-</div>
+	<!-- 14 Points -->
+	
+	<div class="step slide" data-x="1000" data-y="0000" data-rotate="0" data-scale="1">
+		<h1>Steve's 14 Points</h1>
+		<img class="imageWide" src="images/BookCover.png" alt="Book Cover" />
+		<!--
+		<img usemap="#map1" border="0" src="images/BookCover.png">
+		-->
+	</div>
 
-<div class="step slide" data-x="1451" data-y="1049" data-rotate="36" data-scale="1">
-  <center>
-    <img usemap="#map1" border="0" src="imagemap.gif">
-    <map name="map1">
-      <area shape="rect" coords="0,0,31,31" href="javascript:alert('Home')" title="Home">
-      <area shape="rect" coords="36,0,66,31" href="javascript:alert('Gifts')" title="Gifts">
-      <area shape="rect" coords="71,0,101,31" href="javascript:alert('Cart')" title="Cart">
-      <area shape="rect" coords="106,0,136,31" href="javascript:alert('Settings')" title="Settings">
-      <area shape="rect" coords="141,0,171,31" href="javascript:alert('Help')" title="Help">
-    </map>
-  </center>
-</div>
+	<div class="step slide" data-x="2000" data-y="0000" data-rotate="0" data-scale="1">
+		<p class="single-point">Make Fewer HTTP Requests</p>
+	</div>
+	
+	<div class="step slide" data-x="3000" data-y="0000" data-rotate="0" data-scale="1">
+		<p class="single-point">Use a Content Delivery Network</p>
+	</div>
+	
+	<!-- Live Demos -->
+	
+	<div class="step slide" data-x="0000" data-y="1000" data-rotate="90" data-scale="1">
+		<h1>Live Demos</h1>
+		<ul>
+			<li>Apple</li>
+			<li>CNN</li>
+			<li>Stack Overflow</li>
+		</ul>
+	</div>
 
-<div class="step slide" data-x="-6" data-y="912" data-rotate="72" data-scale="1">
-  <q>External Everything Then Cache</q>
-</div>
+	<div class="step slide" data-x="0000" data-y="2000" data-rotate="90" data-scale="1">
+		<h1>Apple</h1>
+	</div>
 
-<div class="step slide" data-x="-793" data-y="912" data-rotate="108" data-scale="1">
-  <q>CSS on Top</q>
-</div>
+	<div class="step slide" data-x="0000" data-y="3000" data-rotate="90" data-scale="1">
+		<h1>CNN</h1>
+	</div>
 
-<div class="step slide" data-x="-1431" data-y="449" data-rotate="144" data-scale="1">
-  <q>Javascript on Bottom</q>
-</div>
+	<div class="step slide" data-x="0000" data-y="4000" data-rotate="90" data-scale="1">
+		<h1>Stack Overflow</h1>
+	</div>
 
-<div class="step slide" data-x="-1675" data-y="-300" data-rotate="180" data-scale="1">
-  <q>Minify and GZip</q>
-</div>
+	<!-- Themes -->
+	
+	<div class="step slide" data-x="-1000" data-y="0000" data-rotate="180" data-scale="1">
+		<h1>Themes</h1>
+		<ul>
+			<li>Need to talk this out</li>
+		</ul>
+	</div>
 
-<div class="step slide" data-x="-1431" data-y="-1049" data-rotate="216" data-scale="1">
-  <q>Tools</q>
-  <ul>
-    <li>
-      Grunt
-    </li>
-    <li>
-      Gulp
-    </li>
-    <li>
-      Webpack
-    </li>
-  </ul>
-</div>
-
-<div class="step slide" data-x="-793" data-y="-1512" data-rotate="252" data-scale="1">
-  <a target="_blank" href="http:\\www.github.com">GitHub</a>
-</div>
-
-<div class="step slide" data-x="-6" data-y="-1512" data-rotate="288" data-scale="1">
-  <a target="_blank" href="http://yslow.org/">YSlow</a>
-</div>
-
-<div class="step slide credits" data-x="631" data-y="-1049" data-rotate="324" data-scale="1">
-  <h2>Questions</h2>
-</div>
-<div class="step" data-x="0" data-y="0" data-scale="6"></div>
-</div>
+	<!-- Recap -->
+	
+	<div class="step slide" data-x="0000" data-y="-1000" data-rotate="270" data-scale="1">
+		<h1>Recap</h1>
+		<p>
+			What sucked? What was good?
+		</p>
+	</div>
+	
+	<div class="step" data-x="0" data-y="0" data-scale="6"></div>
+	</div>
+	
 <script src="impress.js"></script>
 <script>impress().init()</script>
 </body>
