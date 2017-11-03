@@ -1,0 +1,110 @@
+Test Code for bitcoinj
+
+Questions for the audience
+- have worked in legacy codebases?
+- without test coverage?
+- with methods >100 lines long?
+- have used refactoring tools?
+- are familiar with test coverage tools?
+
+	---------------------------------------
+
+Add the following to the pom's
+        <dependency>
+		    <groupId>org.mockito</groupId>
+		    <artifactId>mockito-core</artifactId>
+		    <version>2.11.0</version>
+		    <scope>test</scope>
+		</dependency>
+
+	---------------------------------------
+
+ScriptTest.java
+	This assumes a single method extracted from Script.java's executeMultiSig() method
+
+	@Test
+	public void testV1() {
+		
+        byte[] sigProgBytes = HEX.decode(ScriptTest.sigProg);
+        Script script = new Script(sigProgBytes);
+
+		int lastCodeSepLocation = 0;
+		LinkedList<byte[]> sigs = new LinkedList<>();
+		
+		byte[] result = helper.getProgramWithRemovedSignatures(script, lastCodeSepLocation, sigs);
+		
+		assertNotNull(result);
+	}
+	
+	Add coverage of the loop
+	
+	@Test
+	public void testV2() {
+		
+        byte[] sigProgBytes = HEX.decode(ScriptTest.sigProg);
+        Script script = new Script(sigProgBytes);
+        
+		int lastCodeSepLocation = 0;
+		LinkedList<byte[]> sigs = new LinkedList<>();
+		
+		byte[] sig = "helllo".getBytes();
+		sigs.add(sig);
+		
+		byte[] result = helper.getProgramWithRemovedSignatures(script, lastCodeSepLocation, sigs);
+		
+		assertNotNull(result);
+	}
+	
+	Remove the 'staticness' of the helper method, rerun tests.
+	This change is an unsafe change, you are not using the refactoring tool.
+	
+	---------------------------------------
+	
+CucumberReportPublisher
+
+	CucumberReportPublisher.generateReport
+	addClassificationsToConfiguration
+	should we move log() ? (not for now)
+	should we move evaluateMacro() ? (yes, why not)
+	
+	@Test
+	public void testv3() throws InterruptedException, IOException {
+		Run<?, ?> build = null;
+		FilePath workspace = null;
+		TaskListener listener = null;
+		Configuration configuration = null;
+		List<Classification> classifications = new ArrayList<>();
+		
+		helper.addClassificationsToConfiguration(build, workspace, listener, configuration, classifications);
+	}
+	
+	@Test
+	public void testv4() throws InterruptedException, IOException {
+		
+		FilePath workspace = null;
+		
+		Configuration configuration = Mockito.mock(Configuration.class);
+		
+		PrintStream mockPrintStream = Mockito.mock(PrintStream.class);
+		
+		TaskListener listener = Mockito.mock(TaskListener.class);
+		Mockito.when(listener.getLogger()).thenReturn(mockPrintStream);
+		
+		EnvVars envVars = Mockito.mock(EnvVars.class);
+		
+		Run<?, ?> build = Mockito.mock(Run.class);
+		Mockito.when(build.getEnvironment(listener)).thenReturn(envVars);
+		
+		List<Classification> classifications = new ArrayList<>();
+		classifications.add(new Classification("myKey", "myValue"));
+		
+		helper.addClassificationsToConfiguration(build, workspace, listener, configuration, classifications);
+	}
+	
+	---------------------------------------
+	
+Takeaways
+- dependencies have to be handled in some way
+  . start by constructing empty instances
+  . move to a mocking library
+- is the code worth saving? what alternatives do you have?
